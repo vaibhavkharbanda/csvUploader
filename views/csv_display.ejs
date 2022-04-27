@@ -1,0 +1,39 @@
+<!-- stylesheets -->
+<link rel="stylesheet" href="/css/displayfiles.css" />
+<div class="container">
+  <div class="row text-center m-3">
+    <h1>List of Uploaded CSV Files:</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <ul class="list-group">
+      <% if(files.length > 0){%> <% for(let file of files){%>
+      <li class="list-group-item d-flex justify-content-between">
+        <div class="col-md-4">
+          <a
+            class="text-primary fs-4 text-capitalize"
+            href="/csv/displayData/<%=file.id%>"
+          >
+            <%= file.originalname%>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a href="/csv/displayData/<%=file.id%>" class="link-light"
+            ><button type="button" class="btn btn-secondary">
+              View file
+            </button></a
+          >
+        </div>
+        <div class="col-md-2">
+          <a href="/csv/delete/<%=file.id%>" class="link-light">
+            <button type="button" class="btn btn-danger">Delete</button>
+          </a>
+        </div>
+      </li>
+      <%}%> <%}else{%>
+      <h2 class="text-info">No files have been uploaded yet !!!</h2>
+      <%}%>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row m-3">
+      <h2>Upload CSV Files</h2>
+    </div>
+    <div class="row m-3">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Click on Choose file button and select the file.</li>
+        <li>Click on Upload File to upload the CSV file.</li>
+      </ul>
+      <ul>
+        <li>Select only CSV files.</li>
+        <li>One file upload at one time.</li>
+        <li>Delimiter comma</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-8">
+        <form action="/csv/upload" method="post" enctype="multipart/form-data">
+          <input class="form-control" type="file" name="csv" id="csv-file" />
+          <input
+            class="form-control btn btn-primary"
+            type="submit"
+            value="Upload File"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row m-4">
+      <h2>View uploaded CSV Files</h2>
+      <a href="/csv/displayfiles" class="text-white">
+        <button class="btn btn-primary">View Uploaded Files</button>
+      </a>
+    </div>
+  </div>
